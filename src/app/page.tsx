@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/home/Hero";
 import Stats from "@/components/home/Stats";
+import About from "@/components/home/About";
 
 const projects = [
   {
@@ -35,6 +36,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Stats />
+      <About />
+
 
       <section id="skills" className="mx-auto max-w-6xl px-6 py-24">
         <p className="text-sm uppercase tracking-[0.3em] text-cyan-400">
