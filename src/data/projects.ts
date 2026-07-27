@@ -11,11 +11,18 @@ export type Project = {
   challenges?: string[];
   results?: string[];
   takeaway?: string;
+  metrics?: {
+    label: string;
+    value: string;
+  }[];
 };
 
 export const projects: Project[] = [
   {
     number: "01",
+
+
+
     slug: "catalyst-9800",
     title: "Cisco Catalyst 9800 Wireless Modernization",
     description:
@@ -29,7 +36,26 @@ export const projects: Project[] = [
       "High Availability",
     ],
     status: "published",
-    category: "Wireless Modernization",
+
+metrics: [
+  {
+    value: "1,200+",
+    label: "Access Points",
+  },
+  {
+    value: "250+",
+    label: "Healthcare Sites",
+  },
+  {
+    value: "High Availability",
+    label: "Controller Architecture",
+  },
+  {
+    value: "Wi-Fi 6E",
+    label: "Modern Wireless",
+  },
+],
+category: "Wireless Modernization",
     challenge: [
       "The wireless environment supported distributed healthcare locations with different building layouts, mixed generations of access points, and varied RF conditions.",
       "The existing design required greater consistency across controllers, WLAN configuration, RF profiles, authentication, high availability, and operational monitoring.",
@@ -85,3 +111,4 @@ export const projects: Project[] = [
     status: "coming-soon",
   },
 ];
+

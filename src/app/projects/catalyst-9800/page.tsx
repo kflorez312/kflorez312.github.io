@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import { projects } from "@/data/projects";
+import ArchitectureDiagram from "@/components/projects/ArchitectureDiagram";
 
 export default function Catalyst9800Page() {
   const project = projects.find(
@@ -48,7 +49,27 @@ export default function Catalyst9800Page() {
           </div>
         </header>
 
+        {project.metrics && (
+          <section className="grid gap-4 border-b border-slate-800 py-10 sm:grid-cols-2 lg:grid-cols-4">
+            {project.metrics.map((metric) => (
+              <div
+                key={metric.label}
+                className="rounded-xl border border-slate-800 bg-slate-900/70 p-6"
+              >
+                <p className="text-3xl font-bold text-white">
+                  {metric.value}
+                </p>
+
+                <p className="mt-2 text-sm uppercase tracking-[0.2em] text-slate-400">
+                  {metric.label}
+                </p>
+              </div>
+            ))}
+          </section>
+        )}
+
         <section className="grid gap-12 border-b border-slate-800 py-14 md:grid-cols-[0.35fr_0.65fr]">
+          <ArchitectureDiagram />
           <h2 className="text-2xl font-bold">Business challenge</h2>
 
           <div className="space-y-5 leading-8 text-slate-400">
@@ -104,6 +125,5 @@ export default function Catalyst9800Page() {
     </main>
   );
 }
-
 
 
