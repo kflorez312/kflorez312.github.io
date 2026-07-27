@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Hero from "@/components/home/Hero";
 
 const projects = [
   {
@@ -30,90 +31,8 @@ const projects = [
 export default function Home() {
   return (
     <main className="min-h-screen bg-slate-950 text-white">
-<Navbar />
-
-      <section
-        id="top"
-        className="mx-auto flex max-w-7xl flex-col items-center justify-center px-6 py-32 text-center"
-      >
-        <p className="mb-4 text-sm uppercase tracking-[0.35em] text-cyan-400">
-          Staff Network Engineer
-        </p>
-
-        <h1 className="text-5xl font-extrabold tracking-tight md:text-7xl">
-          Kenneth Florez
-        </h1>
-
-        <h2 className="mt-6 text-2xl text-slate-300 md:text-3xl">
-          Enterprise Infrastructure • Network Automation • AI-Assisted
-          Operations
-        </h2>
-
-        <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-400">
-          I design, modernize, and operate enterprise networks that support
-          thousands of users across healthcare, transportation, and large-scale
-          production environments. My focus is building resilient, secure, and
-          highly available infrastructure while improving operational efficiency
-          through automation and AI.
-        </p>
-
-        <div className="mt-12 flex flex-wrap justify-center gap-4">
-          <a
-            href="#projects"
-            className="rounded-lg bg-cyan-500 px-8 py-4 font-semibold text-black transition hover:bg-cyan-400"
-          >
-            View Projects
-          </a>
-
-          <a
-            href="https://github.com/kflorez312"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-lg border border-slate-600 px-8 py-4 transition hover:border-cyan-400"
-          >
-            GitHub
-          </a>
-
-          <a
-            href="mailto:kflorez312@gmail.com"
-            className="rounded-lg border border-slate-600 px-8 py-4 transition hover:border-cyan-400"
-          >
-            Contact
-          </a>
-        </div>
-      </section>
-
-      <section className="mx-auto grid max-w-6xl gap-8 px-6 pb-24 md:grid-cols-4">
-        {[
-          ["20+", "Years in Networking"],
-          ["600+", "Enterprise Sites Supported"],
-          ["100+", "Healthcare Facilities"],
-          ["CCNP", "Enterprise Certified"],
-        ].map(([value, label]) => (
-          <div key={label} className="rounded-xl bg-slate-900 p-8 text-center">
-            <h3 className="text-4xl font-bold text-cyan-400">{value}</h3>
-            <p className="mt-2 text-slate-400">{label}</p>
-          </div>
-        ))}
-      </section>
-
-      <section id="about" className="mx-auto max-w-6xl px-6 py-24">
-        <p className="text-sm uppercase tracking-[0.3em] text-cyan-400">
-          About
-        </p>
-
-        <h2 className="mt-4 max-w-4xl text-3xl font-bold md:text-5xl">
-          Production networking, infrastructure modernization, and technical
-          leadership.
-        </h2>
-
-        <p className="mt-8 max-w-4xl text-lg leading-8 text-slate-400">
-          I have worked across healthcare, transportation, retail, and consulting
-          environments, supporting highly distributed production networks. My
-          work centers on reliability, high availability, incident response,
-          root cause analysis, standardization, and operational improvement.
-        </p>
-      </section>
+      <Navbar />
+      <Hero />
 
       <section id="skills" className="mx-auto max-w-6xl px-6 py-24">
         <p className="text-sm uppercase tracking-[0.3em] text-cyan-400">
