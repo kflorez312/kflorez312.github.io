@@ -1,29 +1,31 @@
+import Link from "next/link";
+
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-800 bg-slate-950/90 backdrop-blur">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-        <a href="#top" className="text-lg font-bold tracking-wide">
+    <nav className="fixed inset-x-0 top-0 z-50 border-b border-slate-800 bg-slate-950/90 backdrop-blur">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <Link href="/" className="font-semibold text-white">
           Kenneth Florez
-        </a>
+        </Link>
 
-        <div className="hidden gap-8 text-sm text-slate-300 md:flex">
-          <a href="#about" className="transition hover:text-cyan-400">
+        <div className="flex gap-6 text-sm text-slate-300">
+          <Link href="/#about" className="transition hover:text-cyan-400">
             About
-          </a>
+          </Link>
 
-          <a href="#skills" className="transition hover:text-cyan-400">
+          <Link href="/#skills" className="transition hover:text-cyan-400">
             Skills
-          </a>
+          </Link>
 
-          <a href="#projects" className="transition hover:text-cyan-400">
+          <Link href="/projects" className="transition hover:text-cyan-400">
             Projects
-          </a>
+          </Link>
 
-          <a href="#contact" className="transition hover:text-cyan-400">
+          <Link href="/#contact" className="transition hover:text-cyan-400">
             Contact
-          </a>
+          </Link>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
   );
 }
