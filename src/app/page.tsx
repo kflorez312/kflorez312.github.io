@@ -2,33 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/home/Hero";
 import Stats from "@/components/home/Stats";
 import About from "@/components/home/About";
-
-const projects = [
-  {
-    title: "Healthcare Wireless Modernization",
-    description:
-      "Standardized Cisco Catalyst 9800 wireless infrastructure across a multi-site healthcare environment, improving reliability, roaming, and operational consistency.",
-    technologies: ["Catalyst 9800", "Cisco ISE", "Wi-Fi 6/6E"],
-  },
-  {
-    title: "Enterprise SD-WAN Transformation",
-    description:
-      "Improved resiliency, business policy consistency, local internet breakout, and multi-circuit operations across distributed locations.",
-    technologies: ["VeloCloud", "BGP", "High Availability"],
-  },
-  {
-    title: "10G Campus Core Upgrade",
-    description:
-      "Modernized LAN connectivity, upgraded switch uplinks, consolidated Layer 3 services, and improved campus redundancy.",
-    technologies: ["Cisco Catalyst", "10G", "OSPF", "LACP"],
-  },
-  {
-    title: "Network Observability",
-    description:
-      "Expanded end-to-end visibility and accelerated root cause analysis using proactive monitoring and synthetic testing.",
-    technologies: ["ThousandEyes", "Catalyst Center", "SolarWinds"],
-  },
-];
+import Projects from "@/components/home/Projects";
 
 export default function Home() {
   return (
@@ -37,7 +11,6 @@ export default function Home() {
       <Hero />
       <Stats />
       <About />
-
 
       <section id="skills" className="mx-auto max-w-6xl px-6 py-24">
         <p className="text-sm uppercase tracking-[0.3em] text-cyan-400">
@@ -64,45 +37,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="projects" className="mx-auto max-w-6xl px-6 py-24">
-        <p className="text-sm uppercase tracking-[0.3em] text-cyan-400">
-          Featured Projects
-        </p>
-
-        <h2 className="mt-4 text-3xl font-bold md:text-5xl">
-          Enterprise infrastructure programs and engineering case studies.
-        </h2>
-
-        <div className="mt-12 grid gap-8 md:grid-cols-2">
-          {projects.map((project, index) => (
-            <article
-              key={project.title}
-              className="rounded-2xl border border-slate-800 bg-slate-900 p-8 transition hover:-translate-y-1 hover:border-cyan-500"
-            >
-              <span className="text-sm font-semibold text-cyan-400">
-                0{index + 1}
-              </span>
-
-              <h3 className="mt-4 text-2xl font-bold">{project.title}</h3>
-
-              <p className="mt-4 leading-7 text-slate-400">
-                {project.description}
-              </p>
-
-              <div className="mt-6 flex flex-wrap gap-2">
-                {project.technologies.map((technology) => (
-                  <span
-                    key={technology}
-                    className="rounded-full bg-slate-800 px-3 py-1 text-sm text-slate-300"
-                  >
-                    {technology}
-                  </span>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+      <Projects />
 
       <section id="contact" className="border-t border-slate-800">
         <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-24 md:flex-row md:items-center md:justify-between">
