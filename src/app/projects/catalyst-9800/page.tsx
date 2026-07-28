@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import ArchitectureDiagram from "@/components/projects/WirelessArchitectureDiagram";
+import ProjectSection from "@/components/projects/ProjectSection";
 import { projects } from "@/data/projects";
-import ArchitectureDiagram from "@/components/projects/ArchitectureDiagram";
 
 export default function Catalyst9800Page() {
   const project = projects.find(
@@ -68,62 +69,58 @@ export default function Catalyst9800Page() {
           </section>
         )}
 
-        <section className="grid gap-12 border-b border-slate-800 py-14 md:grid-cols-[0.35fr_0.65fr]">
-          <ArchitectureDiagram />
-          <h2 className="text-2xl font-bold">Business challenge</h2>
+        <ArchitectureDiagram />
 
+        <ProjectSection title="Business Challenge">
           <div className="space-y-5 leading-8 text-slate-400">
             {project.challenge?.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
-        </section>
+        </ProjectSection>
 
-        <section className="grid gap-12 border-b border-slate-800 py-14 md:grid-cols-[0.35fr_0.65fr]">
-          <h2 className="text-2xl font-bold">Engineering approach</h2>
-
+        <ProjectSection title="Engineering Approach">
           <ul className="space-y-3 leading-8 text-slate-400">
             {project.approach?.map((item) => (
-              <li key={item}>• {item}</li>
+              <li key={item} className="flex gap-3">
+                <span
+                  aria-hidden="true"
+                  className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400"
+                />
+
+                <span>{item}</span>
+              </li>
             ))}
           </ul>
-        </section>
+        </ProjectSection>
 
-        <section className="grid gap-12 border-b border-slate-800 py-14 md:grid-cols-[0.35fr_0.65fr]">
-          <h2 className="text-2xl font-bold">Key challenges</h2>
-
+        <ProjectSection title="Key Challenges">
           <div className="space-y-5 leading-8 text-slate-400">
             {project.challenges?.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
-        </section>
+        </ProjectSection>
 
-        <section className="grid gap-12 border-b border-slate-800 py-14 md:grid-cols-[0.35fr_0.65fr]">
-          <h2 className="text-2xl font-bold">Results</h2>
-
+        <ProjectSection title="Results">
           <div className="grid gap-4 sm:grid-cols-2">
             {project.results?.map((result) => (
               <div
                 key={result}
-                className="rounded-xl border border-slate-800 bg-slate-900 p-5 text-slate-300"
+                className="rounded-xl border border-slate-800 bg-slate-900 p-5 leading-7 text-slate-300"
               >
                 {result}
               </div>
             ))}
           </div>
-        </section>
+        </ProjectSection>
 
-        <section className="py-14">
-          <h2 className="text-2xl font-bold">Engineering takeaway</h2>
-
-          <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-400">
+        <ProjectSection title="Engineering Takeaway">
+          <p className="max-w-4xl text-lg leading-8 text-slate-400">
             {project.takeaway}
           </p>
-        </section>
+        </ProjectSection>
       </article>
     </main>
   );
 }
-
-
