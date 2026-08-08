@@ -1,7 +1,9 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import ArchitectureDiagram from "@/components/projects/WirelessArchitectureDiagram";
+import ProjectOverview from "@/components/projects/ProjectOverview";
 import ProjectSection from "@/components/projects/ProjectSection";
+import ProjectTimeline from "@/components/projects/ProjectTimeline";
 import { projects } from "@/data/projects";
 
 export default function Catalyst9800Page() {
@@ -69,7 +71,15 @@ export default function Catalyst9800Page() {
           </section>
         )}
 
+        {project.overview && (
+          <ProjectOverview items={project.overview} />
+        )}
+
         <ArchitectureDiagram />
+
+        {project.timeline && (
+          <ProjectTimeline steps={project.timeline} />
+        )}
 
         <ProjectSection title="Business Challenge">
           <div className="space-y-5 leading-8 text-slate-400">
@@ -87,7 +97,6 @@ export default function Catalyst9800Page() {
                   aria-hidden="true"
                   className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400"
                 />
-
                 <span>{item}</span>
               </li>
             ))}
