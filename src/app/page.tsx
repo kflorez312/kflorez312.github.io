@@ -51,8 +51,7 @@ export default function Home() {
             </h2>
 
             <p className="mt-4 text-slate-400">
-              Open to Staff and senior production network engineering
-              opportunities.
+              Open to senior and lead network engineering opportunities.
             </p>
           </div>
 

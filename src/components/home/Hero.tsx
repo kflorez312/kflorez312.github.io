@@ -6,7 +6,7 @@ export default function Hero() {
     >
       <div className="mx-auto flex min-h-[560px] max-w-6xl flex-col items-center justify-center px-6 py-24 text-center">
         <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-400">
-          Staff Network Engineer
+          Lead / Senior Network Engineer
         </p>
 
         <h1 className="mt-5 text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
@@ -14,8 +14,7 @@ export default function Hero() {
         </h1>
 
         <p className="mt-5 text-xl text-slate-300 sm:text-2xl">
-          Enterprise Infrastructure · Network Automation · AI-Assisted
-          Operations
+          Enterprise Networking · Wireless · SD-WAN · Network Automation
         </p>
 
         <p className="mt-8 max-w-3xl text-base leading-8 text-slate-400 sm:text-lg">
