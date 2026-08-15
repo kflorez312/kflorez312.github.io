@@ -294,9 +294,128 @@ export const projects: Project[] = [
     slug: "campus-core",
     title: "10G Campus Core Upgrade",
     description:
-      "Modernized LAN connectivity, upgraded switch uplinks, consolidated Layer 3 services, and improved campus redundancy.",
-    technologies: ["Cisco Catalyst", "10G", "OSPF", "LACP"],
-    status: "coming-soon",
+      "Modernized campus LAN connectivity with Cisco Catalyst switching, redundant 10G uplinks, Layer 3 gateway migration, OSPF routing, and resilient production cutover planning.",
+    technologies: [
+      "Cisco Catalyst",
+      "10G Uplinks",
+      "OSPF",
+      "LACP",
+      "EtherChannel",
+      "Layer 3 Routing",
+    ],
+    status: "published",
+    category: "Campus Core Modernization",
+
+    metrics: [
+      {
+        value: "10G",
+        label: "Uplink Capacity",
+      },
+      {
+        value: "Redundant",
+        label: "Core Design",
+      },
+      {
+        value: "OSPF",
+        label: "Routing Protocol",
+      },
+      {
+        value: "LACP",
+        label: "Path Resiliency",
+      },
+    ],
+
+    overview: [
+      {
+        label: "Role",
+        value: "Senior Network Engineer",
+      },
+      {
+        label: "Industry",
+        value: "Healthcare",
+      },
+      {
+        label: "Environment",
+        value: "Campus LAN core, distribution, and access layers",
+      },
+      {
+        label: "Infrastructure",
+        value: "Cisco Catalyst switching with redundant 10G uplinks",
+      },
+      {
+        label: "Platform",
+        value: "Cisco Catalyst / OSPF / LACP EtherChannel",
+      },
+      {
+        label: "Focus",
+        value:
+          "Gateway migration, routing resiliency, uplink capacity, validation, and production cutover",
+      },
+    ],
+
+    timeline: [
+      {
+        title: "Assessment",
+        description:
+          "Reviewed switching topology, uplink utilization, Layer 2 boundaries, gateway placement, routing adjacencies, redundancy gaps, and production dependencies.",
+      },
+      {
+        title: "Design",
+        description:
+          "Defined the target core and distribution architecture with redundant Catalyst switches, 10G uplinks, LACP EtherChannels, OSPF routing, and gateway migration sequencing.",
+      },
+      {
+        title: "Staging",
+        description:
+          "Prepared switch configuration, interface standards, routing policy, spanning-tree guardrails, monitoring, rollback steps, and validation checklists before field work.",
+      },
+      {
+        title: "Migration",
+        description:
+          "Moved VLAN gateways, routed links, uplinks, and access-layer connections through controlled maintenance windows with senior engineering oversight.",
+      },
+      {
+        title: "Validation",
+        description:
+          "Verified routing neighbors, path failover, EtherChannel health, endpoint reachability, application access, monitoring, and operational visibility.",
+      },
+      {
+        title: "Handoff",
+        description:
+          "Documented the final topology, support model, escalation paths, standard checks, and lessons learned for future campus network changes.",
+      },
+    ],
+
+    challenge: [
+      "The campus network needed additional uplink capacity, cleaner Layer 3 boundaries, and stronger resiliency while continuing to support production users, applications, and connected infrastructure.",
+      "Gateway placement, VLAN migration, routing transitions, redundant path behavior, and access-layer dependencies had to be planned carefully so the modernization could proceed without exposing internal identifiers or disrupting business operations.",
+    ],
+
+    approach: [
+      "Designed a redundant Cisco Catalyst core and distribution pattern with resilient 10G uplinks.",
+      "Used LACP EtherChannel to aggregate paths and improve link-level resiliency between network layers.",
+      "Migrated VLAN gateways and Layer 3 routing responsibilities through controlled change windows.",
+      "Standardized OSPF adjacency, route propagation, interface, and uplink validation steps.",
+      "Validated spanning-tree behavior, redundant forwarding paths, gateway reachability, routing failover, and application access before and after cutover.",
+      "Prepared change plans, rollback procedures, implementation checklists, and stakeholder communication for production maintenance windows.",
+    ],
+
+    challenges: [
+      "The migration touched shared infrastructure where switching, routing, endpoint connectivity, security policy, and monitoring all had to align during the same maintenance sequence.",
+      "Legacy VLAN placement, access-layer uplink dependencies, routing convergence, EtherChannel negotiation, maintenance-window limits, and rollback readiness required precise coordination and validation.",
+    ],
+
+    results: [
+      "Increased campus uplink capacity with standardized 10G connectivity",
+      "Improved core and distribution redundancy",
+      "More consistent Layer 3 routing and gateway placement",
+      "Stronger resiliency through redundant paths and LACP EtherChannels",
+      "Cleaner production cutover process with validation and rollback planning",
+      "Improved operational visibility into uplink, routing, and switch health",
+    ],
+
+    takeaway:
+      "A campus core upgrade is a production routing and resiliency change, not just a switch replacement. Uplink capacity, gateway ownership, OSPF behavior, EtherChannel health, access-layer dependencies, monitoring, change planning, validation, and rollback all need to be engineered as one system.",
   },
 
   {
