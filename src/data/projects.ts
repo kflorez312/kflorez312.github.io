@@ -423,8 +423,127 @@ export const projects: Project[] = [
     slug: "observability",
     title: "Network Observability",
     description:
-      "Expanded end-to-end visibility and accelerated root-cause analysis using proactive monitoring and synthetic testing.",
-    technologies: ["ThousandEyes", "Catalyst Center", "SolarWinds"],
-    status: "coming-soon",
+      "Expanded end-to-end visibility across network infrastructure, WAN paths, applications, and user experience using enterprise monitoring, telemetry, proactive alerting, and synthetic testing.",
+    technologies: [
+      "ThousandEyes",
+      "Cisco Catalyst Center",
+      "SolarWinds",
+      "Network telemetry",
+      "Synthetic testing",
+      "Performance monitoring",
+    ],
+    status: "published",
+    category: "Network Observability",
+
+    metrics: [
+      {
+        value: "24×7",
+        label: "Monitoring",
+      },
+      {
+        value: "End-to-End",
+        label: "Visibility",
+      },
+      {
+        value: "Synthetic",
+        label: "Testing",
+      },
+      {
+        value: "Faster RCA",
+        label: "Troubleshooting",
+      },
+    ],
+
+    overview: [
+      {
+        label: "Role",
+        value: "Senior Network Engineer",
+      },
+      {
+        label: "Industry",
+        value: "Healthcare",
+      },
+      {
+        label: "Environment",
+        value: "Distributed enterprise network and application paths",
+      },
+      {
+        label: "Infrastructure",
+        value: "Branch, campus, WAN, internet, and enterprise services",
+      },
+      {
+        label: "Platform",
+        value: "ThousandEyes / Cisco Catalyst Center / SolarWinds",
+      },
+      {
+        label: "Focus",
+        value:
+          "Proactive detection, troubleshooting, incident response, and root-cause analysis",
+      },
+    ],
+
+    timeline: [
+      {
+        title: "Assessment",
+        description:
+          "Reviewed monitoring coverage, alert quality, device inventory, application dependencies, WAN paths, incident history, and operational troubleshooting workflows.",
+      },
+      {
+        title: "Design",
+        description:
+          "Mapped complementary visibility across infrastructure health, synthetic user experience, path performance, application reachability, telemetry, and centralized alerting.",
+      },
+      {
+        title: "Instrumentation",
+        description:
+          "Expanded monitoring sources, validated device and path coverage, tuned polling and telemetry inputs, and aligned dashboards to operational support needs.",
+      },
+      {
+        title: "Synthetic Testing",
+        description:
+          "Implemented generic synthetic tests for critical paths and services to identify reachability, latency, packet loss, and application experience issues before users escalated.",
+      },
+      {
+        title: "Alert Tuning",
+        description:
+          "Reduced noise by refining thresholds, alert routing, escalation context, dependency mapping, and actionable fault indicators.",
+      },
+      {
+        title: "Operations Handoff",
+        description:
+          "Documented troubleshooting workflows, dashboard usage, incident response steps, and root-cause analysis patterns for ongoing production support.",
+      },
+    ],
+
+    challenge: [
+      "The network supported distributed users, branch and campus infrastructure, WAN and internet paths, and enterprise applications where a single monitoring view could not explain every incident.",
+      "Operations needed faster fault detection and clearer root-cause evidence without exposing internal names, addresses, monitoring secrets, or confidential infrastructure details in public-facing materials.",
+    ],
+
+    approach: [
+      "Used SolarWinds and centralized monitoring to track device availability, interface health, performance trends, and alerting across network infrastructure.",
+      "Used Cisco Catalyst Center visibility to improve insight into Catalyst switching, wireless infrastructure, client experience, and operational assurance.",
+      "Used ThousandEyes synthetic tests and agents to validate network paths, internet reachability, SaaS access, and application experience from distributed locations.",
+      "Correlated telemetry, alerts, path visibility, and synthetic test results during troubleshooting and incident response.",
+      "Improved alert thresholds, dashboard organization, escalation context, and operational runbooks to reduce noise and accelerate triage.",
+      "Validated monitoring coverage after network changes so new infrastructure, paths, and services were observable before being handed to operations.",
+    ],
+
+    challenges: [
+      "Monitoring data came from multiple platforms with different strengths, timing, terminology, and alerting models, so correlation was essential for accurate root-cause analysis.",
+      "Alert fatigue, incomplete inventory, path asymmetry, intermittent packet loss, SaaS dependencies, and user-experience complaints required careful tuning and repeatable troubleshooting workflows.",
+    ],
+
+    results: [
+      "Improved visibility across infrastructure, network paths, applications, and user experience",
+      "Earlier detection of reachability, latency, packet loss, and device health issues",
+      "Faster incident triage through correlated monitoring and synthetic test evidence",
+      "Reduced alert noise through threshold tuning and clearer escalation context",
+      "Better operational dashboards for senior engineering and support teams",
+      "More repeatable root-cause analysis during production incidents",
+    ],
+
+    takeaway:
+      "Strong network observability comes from combining multiple views of the same service path. Device monitoring, Catalyst infrastructure assurance, telemetry, synthetic testing, alerting, and incident workflows must work together so engineers can move from symptom to root cause quickly.",
   },
 ];
