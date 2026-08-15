@@ -165,9 +165,128 @@ export const projects: Project[] = [
     slug: "sdwan",
     title: "Enterprise SD-WAN Transformation",
     description:
-      "Improved internet resiliency, business-policy consistency, local breakout, and multi-circuit operations across distributed locations.",
-    technologies: ["VeloCloud", "BGP", "High Availability"],
-    status: "coming-soon",
+      "Modernized wide-area connectivity with redundant internet circuits, VeloCloud high-availability edge pairs, centralized hub access, and local internet breakout across distributed branch locations.",
+    technologies: [
+      "VeloCloud",
+      "SD-WAN",
+      "BGP",
+      "High Availability",
+      "Local Breakout",
+      "Dual ISP",
+    ],
+    status: "published",
+    category: "SD-WAN Transformation",
+
+    metrics: [
+      {
+        value: "Dual ISP",
+        label: "WAN Resiliency",
+      },
+      {
+        value: "HA Edge",
+        label: "Branch Design",
+      },
+      {
+        value: "Local Breakout",
+        label: "Internet Access",
+      },
+      {
+        value: "Distributed",
+        label: "Site Architecture",
+      },
+    ],
+
+    overview: [
+      {
+        label: "Role",
+        value: "Senior Network Engineer",
+      },
+      {
+        label: "Industry",
+        value: "Healthcare",
+      },
+      {
+        label: "Environment",
+        value: "Distributed branch and hub network",
+      },
+      {
+        label: "Infrastructure",
+        value: "Dual ISP circuits with VeloCloud HA edge pairs",
+      },
+      {
+        label: "Platform",
+        value: "VMware VeloCloud SD-WAN",
+      },
+      {
+        label: "Focus",
+        value:
+          "Internet resiliency, application steering, hub connectivity, and local breakout",
+      },
+    ],
+
+    timeline: [
+      {
+        title: "Discovery",
+        description:
+          "Reviewed circuit inventory, routing dependencies, hub connectivity, firewall policies, application paths, and site readiness.",
+      },
+      {
+        title: "Design",
+        description:
+          "Defined the standard branch pattern for dual internet circuits, high-availability edges, overlay tunnels, business policies, and failover behavior.",
+      },
+      {
+        title: "Pilot",
+        description:
+          "Validated the SD-WAN edge configuration, ISP handoff, overlay reachability, local breakout, and application performance at representative sites.",
+      },
+      {
+        title: "Migration",
+        description:
+          "Moved branches through a repeatable cutover process with routing validation, circuit testing, traffic steering, and rollback planning.",
+      },
+      {
+        title: "Optimization",
+        description:
+          "Tuned path selection, application policies, hub preference, link remediation, and monitoring thresholds based on production behavior.",
+      },
+      {
+        title: "Operational Handoff",
+        description:
+          "Documented deployment standards, troubleshooting workflows, failover validation, and steady-state support responsibilities.",
+      },
+    ],
+
+    challenge: [
+      "The WAN environment depended on distributed locations with varying carrier availability, circuit performance, and local operational constraints.",
+      "The design needed to improve resiliency and application experience while preserving access to enterprise hub services, cloud applications, and internet destinations during phased production migration.",
+    ],
+
+    approach: [
+      "Standardized branch connectivity around dual ISP circuits and VeloCloud high-availability edge pairs.",
+      "Built overlay connectivity back to enterprise hubs for data center and shared service access.",
+      "Enabled local internet breakout for SaaS and web traffic where policy allowed.",
+      "Used business policy and path selection to steer critical applications over the best available circuit.",
+      "Validated BGP, LAN handoff, NAT, firewall, DNS, DHCP, and application reachability during each cutover.",
+      "Created repeatable deployment and verification steps for distributed branch migrations.",
+    ],
+
+    challenges: [
+      "Carrier diversity, inconsistent last-mile performance, branch maintenance windows, and site-specific LAN dependencies required careful rollout sequencing.",
+      "Failover behavior had to be tested across ISP loss, edge failover, hub-path preference, local breakout, and application-specific policy scenarios without disrupting production operations.",
+    ],
+
+    results: [
+      "Improved WAN resiliency through dual-carrier branch connectivity",
+      "More consistent SD-WAN edge and business-policy configuration",
+      "Reduced dependency on centralized internet egress for approved traffic",
+      "Maintained hub connectivity for enterprise and shared services",
+      "Improved visibility into circuit health and path selection",
+      "Created a repeatable operating model for future branch deployments",
+    ],
+
+    takeaway:
+      "Successful SD-WAN transformation depends on more than adding overlay tunnels. Circuit diversity, HA edge behavior, routing, security policy, local breakout, hub reachability, monitoring, and branch operations all have to work as one production design.",
   },
 
   {
