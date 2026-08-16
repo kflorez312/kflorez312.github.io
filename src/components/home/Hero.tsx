@@ -43,6 +43,15 @@ export default function Hero() {
           </a>
 
           <a
+            href="/Kenneth-Florez-Resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-lg border border-slate-600 px-7 py-3 font-semibold text-white transition hover:border-cyan-400 hover:text-cyan-300"
+          >
+            Resume
+          </a>
+
+          <a
             href="#contact"
             className="rounded-lg border border-slate-600 px-7 py-3 font-semibold text-white transition hover:border-cyan-400 hover:text-cyan-300"
           >
