@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import CampusCoreArchitectureDiagram from "@/components/projects/CampusCoreArchitectureDiagram";
@@ -5,6 +6,28 @@ import ProjectOverview from "@/components/projects/ProjectOverview";
 import ProjectSection from "@/components/projects/ProjectSection";
 import ProjectTimeline from "@/components/projects/ProjectTimeline";
 import { projects } from "@/data/projects";
+
+export const metadata: Metadata = {
+  title: "10G Campus Core Upgrade",
+  description:
+    "Case study on campus core modernization with Cisco Catalyst switching, 10G uplinks, OSPF, LACP EtherChannel, Layer 3 gateway migration, redundancy, and production cutover.",
+  alternates: {
+    canonical: "/projects/campus-core",
+  },
+  openGraph: {
+    title: "10G Campus Core Upgrade | Kenneth Florez",
+    description:
+      "Campus networking case study focused on Cisco Catalyst switching, 10G uplinks, OSPF, LACP, Layer 3 routing, resiliency, and cutover planning.",
+    url: "/projects/campus-core",
+    type: "article",
+  },
+  twitter: {
+    card: "summary",
+    title: "10G Campus Core Upgrade | Kenneth Florez",
+    description:
+      "Cisco Catalyst campus core modernization with 10G uplinks, OSPF, LACP EtherChannel, gateway migration, and redundancy.",
+  },
+};
 
 export default function CampusCorePage() {
   const project = projects.find((item) => item.slug === "campus-core");

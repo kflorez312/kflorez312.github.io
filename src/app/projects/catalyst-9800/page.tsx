@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import ArchitectureDiagram from "@/components/projects/WirelessArchitectureDiagram";
@@ -5,6 +6,28 @@ import ProjectOverview from "@/components/projects/ProjectOverview";
 import ProjectSection from "@/components/projects/ProjectSection";
 import ProjectTimeline from "@/components/projects/ProjectTimeline";
 import { projects } from "@/data/projects";
+
+export const metadata: Metadata = {
+  title: "Cisco Catalyst 9800 Wireless Modernization",
+  description:
+    "Case study on enterprise wireless modernization with Cisco Catalyst 9800, Cisco ISE, Wi-Fi 6/6E, RF optimization, resiliency, and operational visibility.",
+  alternates: {
+    canonical: "/projects/catalyst-9800",
+  },
+  openGraph: {
+    title: "Cisco Catalyst 9800 Wireless Modernization | Kenneth Florez",
+    description:
+      "Enterprise wireless modernization case study focused on Catalyst 9800, Cisco ISE, RF consistency, roaming, resiliency, and visibility.",
+    url: "/projects/catalyst-9800",
+    type: "article",
+  },
+  twitter: {
+    card: "summary",
+    title: "Cisco Catalyst 9800 Wireless Modernization | Kenneth Florez",
+    description:
+      "Enterprise wireless modernization with Catalyst 9800, Cisco ISE, Wi-Fi 6/6E, RF optimization, and high availability.",
+  },
+};
 
 export default function Catalyst9800Page() {
   const project = projects.find(

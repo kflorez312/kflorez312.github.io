@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import SDWanArchitectureDiagram from "@/components/projects/SDWanArchitectureDiagram";
@@ -5,6 +6,28 @@ import ProjectOverview from "@/components/projects/ProjectOverview";
 import ProjectSection from "@/components/projects/ProjectSection";
 import ProjectTimeline from "@/components/projects/ProjectTimeline";
 import { projects } from "@/data/projects";
+
+export const metadata: Metadata = {
+  title: "Enterprise SD-WAN Transformation",
+  description:
+    "Case study on enterprise SD-WAN transformation with VeloCloud, dual ISP resiliency, high-availability edges, hub connectivity, local breakout, and path visibility.",
+  alternates: {
+    canonical: "/projects/sdwan",
+  },
+  openGraph: {
+    title: "Enterprise SD-WAN Transformation | Kenneth Florez",
+    description:
+      "Enterprise SD-WAN case study covering VeloCloud HA edges, dual ISP design, hub connectivity, local internet breakout, and operational resiliency.",
+    url: "/projects/sdwan",
+    type: "article",
+  },
+  twitter: {
+    card: "summary",
+    title: "Enterprise SD-WAN Transformation | Kenneth Florez",
+    description:
+      "VeloCloud SD-WAN transformation case study with dual ISP resiliency, HA edges, hub connectivity, and local breakout.",
+  },
+};
 
 export default function SDWanPage() {
   const project = projects.find((item) => item.slug === "sdwan");

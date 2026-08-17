@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import ObservabilityArchitectureDiagram from "@/components/projects/ObservabilityArchitectureDiagram";
@@ -5,6 +6,28 @@ import ProjectOverview from "@/components/projects/ProjectOverview";
 import ProjectSection from "@/components/projects/ProjectSection";
 import ProjectTimeline from "@/components/projects/ProjectTimeline";
 import { projects } from "@/data/projects";
+
+export const metadata: Metadata = {
+  title: "Network Observability",
+  description:
+    "Case study on network observability with ThousandEyes, Cisco Catalyst Center, SolarWinds, network telemetry, synthetic testing, performance monitoring, and faster troubleshooting workflows.",
+  alternates: {
+    canonical: "/projects/observability",
+  },
+  openGraph: {
+    title: "Network Observability | Kenneth Florez",
+    description:
+      "Enterprise observability case study covering ThousandEyes synthetic tests, Catalyst Center visibility, SolarWinds monitoring, telemetry, alerting, and RCA.",
+    url: "/projects/observability",
+    type: "article",
+  },
+  twitter: {
+    card: "summary",
+    title: "Network Observability | Kenneth Florez",
+    description:
+      "Network observability case study with ThousandEyes, Catalyst Center, SolarWinds, telemetry, synthetic testing, alerting, and troubleshooting.",
+  },
+};
 
 export default function ObservabilityPage() {
   const project = projects.find((item) => item.slug === "observability");

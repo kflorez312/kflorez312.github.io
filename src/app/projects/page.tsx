@@ -1,6 +1,29 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import ProjectCard from "@/components/projects/ProjectCard";
 import { projects } from "@/data/projects";
+
+export const metadata: Metadata = {
+  title: "Network Engineering Case Studies",
+  description:
+    "Enterprise network engineering case studies covering wireless modernization, SD-WAN transformation, campus core upgrades, and network observability.",
+  alternates: {
+    canonical: "/projects",
+  },
+  openGraph: {
+    title: "Network Engineering Case Studies | Kenneth Florez",
+    description:
+      "A portfolio of enterprise networking projects spanning wireless, SD-WAN, campus core modernization, observability, and automation.",
+    url: "/projects",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Network Engineering Case Studies | Kenneth Florez",
+    description:
+      "Enterprise wireless, SD-WAN, campus networking, observability, and network automation case studies.",
+  },
+};
 
 export default function ProjectsPage() {
   return (
