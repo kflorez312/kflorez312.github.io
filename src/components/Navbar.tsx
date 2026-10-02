@@ -21,6 +21,13 @@ export default function Navbar() {
             Projects
           </Link>
 
+          <Link
+            href="/troubleshooting"
+            className="transition hover:text-cyan-400"
+          >
+            Troubleshooting
+          </Link>
+
           <a
             href="/Kenneth-Florez-Resume.pdf"
             target="_blank"
