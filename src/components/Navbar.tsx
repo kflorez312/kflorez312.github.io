@@ -8,7 +8,7 @@ export default function Navbar() {
           Kenneth Florez
         </Link>
 
-        <div className="flex flex-wrap justify-end gap-x-6 gap-y-2 text-sm text-slate-300">
+        <div className="flex flex-wrap justify-end gap-x-4 gap-y-2 text-sm text-slate-300 sm:gap-x-6">
           <Link href="/#about" className="transition hover:text-cyan-400">
             About
           </Link>
@@ -26,6 +26,10 @@ export default function Navbar() {
             className="transition hover:text-cyan-400"
           >
             Troubleshooting
+          </Link>
+
+          <Link href="/documentation" className="transition hover:text-cyan-400">
+            Documentation
           </Link>
 
           <a
