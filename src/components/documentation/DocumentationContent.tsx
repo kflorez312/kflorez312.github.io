@@ -1,7 +1,9 @@
 import Link from "next/link";
-import ProjectSection from "@/components/projects/ProjectSection";
 import DocumentationDiagram from "@/components/documentation/DocumentationDiagram";
 import ChangePlanSections from "@/components/documentation/ChangePlanSections";
+import ArchitectureDocumentation from "@/components/documentation/ArchitectureDocumentation";
+import RunbookDocumentation from "@/components/documentation/RunbookDocumentation";
+import StandardsDocumentation from "@/components/documentation/StandardsDocumentation";
 import type { DocumentationExample } from "@/data/documentation";
 
 export default function DocumentationContent({ item }: { item: DocumentationExample }) {
@@ -20,21 +22,13 @@ export default function DocumentationContent({ item }: { item: DocumentationExam
       <DocumentationDiagram item={item} />
       {item.slug === "change-migration-plan" ? (
         <ChangePlanSections sections={item.sections} />
-      ) : item.sections.map((section) => (
-        <ProjectSection key={section.title} title={section.title}>
-          <div className="min-w-0">
-            {section.introduction && <p className="mb-5 leading-8 text-slate-400">{section.introduction}</p>}
-            <ul className="space-y-4 leading-8 text-slate-400">
-              {section.items.map((text) => (
-                <li key={text} className="flex gap-3">
-                  <span aria-hidden="true" className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400" />
-                  <span className="min-w-0">{text}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </ProjectSection>
-      ))}
+      ) : item.slug === "network-architecture" ? (
+        <ArchitectureDocumentation item={item} />
+      ) : item.slug === "troubleshooting-runbook" ? (
+        <RunbookDocumentation item={item} />
+      ) : (
+        <StandardsDocumentation item={item} />
+      )}
       <div className="pt-10"><Link href="/documentation" className="text-sm font-semibold text-cyan-400 transition hover:text-cyan-300">Explore all documentation &rarr;</Link></div>
     </article>
   );

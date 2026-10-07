@@ -1,5 +1,6 @@
-import DocumentationFlow from "@/components/documentation/DocumentationFlow";
 import ChangeLifecycleDiagram from "@/components/documentation/ChangeLifecycleDiagram";
+import { RunbookWorkflow } from "@/components/documentation/RunbookDocumentation";
+import { SiteBuildStack } from "@/components/documentation/StandardsDocumentation";
 import type { DocumentationExample } from "@/data/documentation";
 
 export default function DocumentationDiagram({ item }: { item: DocumentationExample }) {
@@ -10,22 +11,22 @@ export default function DocumentationDiagram({ item }: { item: DocumentationExam
       <p className="mt-4 max-w-3xl leading-7 text-slate-400">{item.diagramDescription}</p>
       {item.slug === "network-architecture" ? (
         <figure className="mt-8">
-          <div role="region" aria-label="Scrollable enterprise site topology" tabIndex={0} className="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-900/50 p-4 focus-visible:outline-2 focus-visible:outline-cyan-400 sm:p-8">
+          <div role="region" aria-label="Scrollable enterprise site topology" tabIndex={0} className="overflow-x-auto rounded-lg border border-cyan-400/25 bg-slate-900/50 p-4 focus-visible:outline-2 focus-visible:outline-cyan-400 sm:p-8">
             <ArchitectureTopology />
           </div>
           <figcaption className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-400">
             <span><span className="mr-2 inline-block w-6 border-t-2 border-cyan-400 align-middle" />Routed links</span>
             <span><span className="mr-2 inline-block w-6 border-t-2 border-dashed border-slate-400 align-middle" />Access / endpoint links</span>
             <span>Logical view; line crossings are not junctions</span>
+            <span>Shaded blocks: separate Layer 2 domains with gateways at distribution</span>
           </figcaption>
         </figure>
       ) : item.slug === "change-migration-plan" ? (
         <ChangeLifecycleDiagram steps={item.flow} />
+      ) : item.slug === "troubleshooting-runbook" ? (
+        <RunbookWorkflow />
       ) : (
-        <div className="mt-8 border-l-2 border-cyan-400 bg-slate-900/50 p-6 sm:p-8">
-          <DocumentationFlow steps={item.flow} ordered />
-          {item.slug === "network-standards" && <p className="mt-6 border-t border-slate-800 pt-5 text-sm leading-6 text-slate-400">Across every tier: monitoring, logging, time synchronization, configuration backups, and operational ownership.</p>}
-        </div>
+        <SiteBuildStack />
       )}
     </section>
   );
@@ -33,9 +34,13 @@ export default function DocumentationDiagram({ item }: { item: DocumentationExam
 
 function ArchitectureTopology() {
   return (
-    <svg viewBox="0 0 880 740" role="img" aria-labelledby="architecture-title architecture-desc" className="w-full min-w-[740px]">
+    <svg viewBox="0 0 880 750" role="img" aria-labelledby="architecture-title architecture-desc" className="w-full min-w-[880px]">
       <title id="architecture-title">Conceptual enterprise site topology</title>
       <desc id="architecture-desc">WAN connectivity feeds two edge devices, which connect to both core switches. Each distribution block has a routed link to each core and redundant access links to two access switches. Users and access points attach below access switches. Client gateways and Layer 2 domains remain within each distribution block.</desc>
+      <g fill="#083344" fillOpacity="0.2" stroke="#22d3ee" strokeOpacity="0.3" strokeDasharray="5 5">
+        <rect x={25} y={388} width={410} height={350} rx={8} />
+        <rect x={445} y={388} width={410} height={350} rx={8} />
+      </g>
       <g fill="none" stroke="#22d3ee" strokeWidth="2">
         <path d="M440 72 V96 H270 V120 M440 96 H610 V120" />
         <path d="M270 184 V260 M610 184 V260" />
@@ -55,8 +60,11 @@ function ArchitectureTopology() {
       <TopologyNode x={300} y={8} width={280} title="WAN / Enterprise Network" detail="Remote services and upstream routing" />
       <TopologyNode x={170} y={120} title="WAN Edge A" detail="Upstream handoff" />
       <TopologyNode x={510} y={120} title="WAN Edge B" detail="Alternate upstream path" />
+      <text x={440} y={149} textAnchor="middle" fill="#22d3ee" fontSize={13} fontWeight={600}>REDUNDANT EDGE</text>
       <TopologyNode x={170} y={260} title="Core Switch A" detail="Routed transit" />
       <TopologyNode x={510} y={260} title="Core Switch B" detail="Routed transit" />
+      <text x={440} y={286} textAnchor="middle" fill="#22d3ee" fontSize={14} fontWeight={600}>CORE PAIR</text>
+      <text x={440} y={308} textAnchor="middle" fill="#94a3b8" fontSize={14}>Layer 3 transit</text>
       <TopologyNode x={150} y={400} title="Distribution Block A" detail="Client gateways / L2 boundary" />
       <TopologyNode x={530} y={400} title="Distribution Block B" detail="Client gateways / L2 boundary" />
       {[140, 340, 540, 740].map((x, index) => <TopologyNode key={x} x={x - 85} y={550} width={170} title="Access Switch" detail={index % 2 === 0 ? "Wired connectivity" : "AP connectivity"} />)}
@@ -69,8 +77,8 @@ function TopologyNode({ x, y, width = 200, title, detail }: { x: number; y: numb
   return (
     <g>
       <rect x={x} y={y} width={width} height={64} rx={8} fill="#0f172a" stroke="#334155" />
-      <text x={x + width / 2} y={y + 26} textAnchor="middle" fill="#f8fafc" fontSize={14} fontWeight={600}>{title}</text>
-      <text x={x + width / 2} y={y + 47} textAnchor="middle" fill="#94a3b8" fontSize={11}>{detail}</text>
+      <text x={x + width / 2} y={y + 26} textAnchor="middle" fill="#f8fafc" fontSize={16} fontWeight={600}>{title}</text>
+      <text x={x + width / 2} y={y + 47} textAnchor="middle" fill="#94a3b8" fontSize={14}>{detail}</text>
     </g>
   );
 }
